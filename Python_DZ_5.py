@@ -1,34 +1,34 @@
 print("1. Условие задачи: На столе лежит 2021 конфета. Играют два игрока делая ход друг после друга. Первый ход определяется жеребьёвкой. За один ход можно забрать не более чем 28 конфет. Все конфеты оппонента достаются сделавшему последний ход. Сколько конфет нужно взять первому игроку, чтобы забрать все конфеты у своего конкурента? Делаем игру против ботаа) Подумайте как наделить бота ""интеллектом""")
 import random
 
-# def print_turn(name, k, counter, left):
-#   print(f"Ходит {name}, взял {k} конфет, теперь у него {counter} конфет, на столе осталось {left} конфет")
-#
-# sweets = 2021
-#
-# turn = random.randint(0, 2)
-#
-# player_counter = 0 # 0
-# bot_counter = 0 # 1
-#
-# while sweets > 28:
-#   if turn:
-#     k = int(input("Введите количество конфет: "))
-#     while k < 1 or k > 28:
-#       k = int(input("Введите корректное (1-28) количество конфет: "))
-#     player_counter += k
-#     sweets -= k
-#     turn = False
-#     print_turn("Игрок", k, player_counter, sweets)
-#   else:
-#     k = random.randint(1, 29)
-#     while sweets - k <= 28 and sweets > 29:
-#       k = random.randint(1, 29)
-#     bot_counter += k
-#     sweets -= k
-#     turn = True
-#     print_turn("Бот", k, bot_counter, sweets)
-# print("Победил игрок" if turn else "Победил бот")
+def print_turn(name, k, counter, left):
+  print(f"Ходит {name}, взял {k} конфет, теперь у него {counter} конфет, на столе осталось {left} конфет")
+
+sweets = 2021
+
+turn = random.randint(0, 2)
+
+player_counter = 0 # 0
+bot_counter = 0 # 1
+
+while sweets > 28:
+  if turn:
+    k = int(input("Введите количество конфет: "))
+    while k < 1 or k > 28:
+      k = int(input("Введите корректное (1-28) количество конфет: "))
+    player_counter += k
+    sweets -= k
+    turn = False
+    print_turn("Игрок", k, player_counter, sweets)
+  else:
+    k = random.randint(1, 29)
+    while sweets - k <= 28 and sweets > 29:
+      k = random.randint(1, 29)
+    bot_counter += k
+    sweets -= k
+    turn = True
+    print_turn("Бот", k, bot_counter, sweets)
+print("Победил игрок" if turn else "Победил бот")
 
 print("2. Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных (здесь только буквы)")
 from re import sub
